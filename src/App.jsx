@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import Clock from './Clock';
+// import './App.css';
 
 class App extends Component{
     constructor(props){
         super(props);
         this.state = {
-            deadline : 'aDecember 25, 2017',
+            deadline : 'December 25, 2017',
             newDeadLine : ''
         }
     }
@@ -18,12 +19,7 @@ class App extends Component{
         return(
             <div className="app">
                 <div className="counter-title"> Countdown to: {this.state.deadline}</div>
-                <div className="counter-list">
-                    <div className="counter-item">14 days</div>
-                    <div className="counter-item">7 hours</div>
-                    <div className="counter-item">20 minutes</div>
-                    <div className="counter-item">34 seconds</div>
-                </div>
+                <Clock deadline={this.state.deadline}/>
                 <div className="counter-add">
                     <input 
                     placeholder='enter date here'
